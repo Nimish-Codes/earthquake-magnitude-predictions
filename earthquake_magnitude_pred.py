@@ -30,11 +30,11 @@ def main():
     st.write("Enter earthquake details:")
     latitude = st.number_input("Latitude:")
     longitude = st.number_input("Longitude:")
-    depth = st.number_input("Depth:")
+    depth = st.number_input("Depth (miles):")
 
     if st.button("Predict"):
         prediction = model.predict([[latitude, longitude, depth]])[0]
-        st.success(f"Predicted magnitude: {prediction}")
+        st.success(f"Predicted magnitude (Richters): {prediction}")
 
 if __name__ == "__main__":
     main()
