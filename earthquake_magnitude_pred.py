@@ -26,6 +26,7 @@ model.fit(X_train, y_train)
 # Define Streamlit app
 def main():
     st.title("Earthquake Magnitude Predictor")
+    st.warning("What will be magnitude of a earthquake at the point it started, choose a place yourself")
     st.warning("Keep feeding data don't get distracted by dimming of screen")
     st.write("Enter earthquake details:")
     latitude = st.number_input("Latitude:")
