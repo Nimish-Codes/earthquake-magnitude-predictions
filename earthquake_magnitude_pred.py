@@ -26,6 +26,7 @@ model.fit(X_train, y_train)
 # Define Streamlit app
 def main():
     st.title("Earthquake Magnitude Predictor")
+    st.warning("Keepfeeding data don't get distracted by dimming of screen")
     st.write("Enter earthquake details:")
     latitude = st.number_input("Latitude:")
     longitude = st.number_input("Longitude:")
@@ -33,7 +34,8 @@ def main():
 
     if st.button("Predict"):
         prediction = model.predict([[latitude, longitude, depth]])[0]
-        st.write(f"Predicted magnitude: {prediction}")
+        prediction = "{:.3f}".format(prediction)
+        st.success(f"Predicted magnitude: {prediction}")
 
 if __name__ == "__main__":
     main()
