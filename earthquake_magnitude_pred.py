@@ -34,7 +34,7 @@ def main():
 
     if st.button("Predict"):
         prediction = model.predict([[latitude, longitude, depth]])[0]
-        prediction = "{:.3f}".format(prediction)
+        # prediction = "{:.3f}".format(prediction)
         st.success(f"Predicted magnitude: {prediction}")
 
 if __name__ == "__main__":
